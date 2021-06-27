@@ -37,9 +37,9 @@ window.onload = function () {
 /**カメラオン時のイベント**/
 player.addEventListener('play', () => {
   p_text.textContent = "1";
+  const model = facemesh.load();
   p_text.textContent = "2";
   setInterval(async () => {
-    const model = facemesh.load();
     p_text.textContent = "3";
     const detections = await model.estimateFaces(player);
     p_text.textContent = JSON.stringify(detections);
