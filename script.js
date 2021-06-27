@@ -37,11 +37,11 @@ window.onload = function () {
 /**カメラオン時のイベント**/
 player.addEventListener('play', () => {
   p_text.textContent = "1";
-  const model = await facemesh.load();
+  const model = facemesh.load();
   p_text.textContent = "2";
   setInterval(async () => {
     p_text.textContent = "3";
-    const faces = await model.estimateFaces(player);
+    const faces = model.estimateFaces(player);
     p_text.textContent = JSON.stringify(faces);
   }, 1000)
   .catch((e) => {
