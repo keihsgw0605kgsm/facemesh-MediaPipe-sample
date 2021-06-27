@@ -42,7 +42,7 @@ player.addEventListener('play', () => {
   setInterval(async () => {
     p_text.textContent = "3";
     const detections = await model.estimateFaces(player);
-    p_text.textContent = JSON.stringify(detections);
+    p_text.textContent = "4"//JSON.stringify(detections);
   }, 1000)
   .catch((e) => {
     console.log('setIntervalでエラー：'+e);
