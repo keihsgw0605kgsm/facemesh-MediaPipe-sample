@@ -39,10 +39,10 @@ player.addEventListener('play', () => {
   p_text.textContent = "1";
   p_text.textContent = "2";
   setInterval(async () => {
-    const model = facemesh.load();
+    const model = await facemesh.load();
     p_text.textContent = "3";
-    const faces = model.estimateFaces(player);
-    p_text.textContent = JSON.stringify(faces);
+    const detections = await model.estimateFaces(player);
+    p_text.textContent = JSON.stringify(detections);
   }, 1000)
   .catch((e) => {
     console.log('setIntervalでエラー：'+e);
