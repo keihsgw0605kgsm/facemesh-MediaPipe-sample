@@ -41,7 +41,7 @@ player.addEventListener('play', () => {
   setInterval(async () => {
     const model = facemesh.load();
     p_text.textContent = "3";
-    const faces = await model.estimateFaces(player);
+    const faces = model.estimateFaces(player);
     p_text.textContent = JSON.stringify(faces);
   }, 1000)
   .catch((e) => {
